@@ -75,11 +75,13 @@ def check_out(filename, isbn, s_id):
 
 
 def return_book(filename, isbn):
-    students, books = open_library(filename)
-
+    students, books = open_library(filename) 
+    del[books[isbn]['checked_out'] 
     # Now ensure that the book is no longer checked out and save the changes
     # to the library.
 
+    with open(filename, 'w') as f:
+        json.dump({'students':students, 'books':books}, f)
     pass
 
 
