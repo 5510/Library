@@ -76,7 +76,6 @@ def check_out(filename, isbn, s_id):
 
 def return_book(filename, isbn):
     students, books = open_library(filename) 
-    del[books[isbn]['checked_out'] 
     # Now ensure that the book is no longer checked out and save the changes
     # to the library.
     del(books[isbn]['checked_out'])
@@ -89,4 +88,5 @@ def status(filename):
     # Print out two lists - one of all books currently checked out,
     # and one of all available books.
 
-
+    if books[isbn] == books[isbn]['checked_out']:
+        print
